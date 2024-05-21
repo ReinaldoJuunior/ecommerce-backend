@@ -19,10 +19,11 @@ public class Pedido {
 	private Long id;
 	private LocalDateTime dataPedido;
 	private BigDecimal valorTotal;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<ItemPedido> items;
-	
+
+
 	public Long getId() {
 		return id;
 	}
@@ -37,6 +38,12 @@ public class Pedido {
 	}
 	public BigDecimal getValorTotal() {
 		return valorTotal;
+	}
+	public void setItems(List<ItemPedido> items) {
+		this.items = items;
+	}
+	public List<ItemPedido> getItems() {
+		return items;
 	}
 	public void setValorTotal(BigDecimal valorTotal) {
 		this.valorTotal = valorTotal;
